@@ -61,10 +61,13 @@ $(function(){
   function showResult(result) {
     if (result === RSP_RESULT_CODE.DRAW) {
       $("#result").text("draw.");
+      $("#result_2").text("test.");
     } else if (result === RSP_RESULT_CODE.WIN) {
       $("#result").text("You win!");
+      $("#result_2").text("test test.");
     } else {
       $("#result").text("You lose!");
+      $("#result_2").text("test test test.");
     }
   }
 });
