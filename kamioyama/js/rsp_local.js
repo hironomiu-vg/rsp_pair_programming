@@ -64,6 +64,9 @@ $(function(){
   function showResult(result) {
     if (result === RSP_RESULT_CODE.DRAW) {
       $("#result").text("draw.");
+      document.getElementById("pic").src = "hikiwake.jpg";
+      document.getElementById("pic").style.width = "200%";
+      document.getElementById("pic").style.height = "200%";
       var info=document.getElementById("senreki");
       var textNode=document.createTextNode("引き分け\n");
       info.appendChild(textNode);
@@ -71,6 +74,9 @@ $(function(){
       document.getElementById("samary3").textContent=hikiwake;
     } else if (result === RSP_RESULT_CODE.WIN) {
       $("#result").text("You win!");
+      document.getElementById("pic").src = "kati.jpg";
+      document.getElementById("pic").style.width = "200%";
+      document.getElementById("pic").style.height = "200%";
       var info=document.getElementById("senreki");
       var textNode=document.createTextNode("勝利\n");
       info.appendChild(textNode);
@@ -78,6 +84,9 @@ $(function(){
       document.getElementById("samary1").textContent=kati;
     } else {
       $("#result").text("You lose!");
+      document.getElementById("pic").src = "make.jpg";
+      document.getElementById("pic").style.width = "200%";
+      document.getElementById("pic").style.height = "200%";
       var info=document.getElementById("senreki");
       var textNode=document.createTextNode("負け\n");
       info.appendChild(textNode);
@@ -104,3 +113,5 @@ function c(){
 function init(){
     document.getElementById("button3").style.display = "none";
 }
+
+
