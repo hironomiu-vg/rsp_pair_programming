@@ -15,6 +15,11 @@ $(function(){
     1: "SCISSORS",
     2: "PAPER"
   };
+  var RESULT_NAME = {
+    0: "DRAW",
+    1: "WIN",
+    2: "LOSE"
+  }
 
   var summary = {
     win: 0,
@@ -81,7 +86,7 @@ $(function(){
   }
 
   function addHistory(myHand, bobHand, result) {
-    $("#history").append("<li>自分の手: " + HAND_NAME[myHand] + " 相手の手: " + HAND_NAME[bobHand] + "</li>");
+    $("#history").append("<li>自分の手: " + HAND_NAME[myHand] + " 相手の手: " + HAND_NAME[bobHand] + " 勝敗: " + RESULT_NAME[result] + "</li>");
   }
 
   function showResult(result) {
