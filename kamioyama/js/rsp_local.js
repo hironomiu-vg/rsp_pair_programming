@@ -27,12 +27,15 @@ $(function(){
     if (handType == "rock") {
       $("#myrspimg").attr("src", "img/rock.png");
       hand = HAND_TYPE.ROCK;
+      document.getElementById("button3").style.display = "none";
     } else if (handType == "scissors") {
       $("#myrspimg").attr("src", "img/scissors.png");
       hand = HAND_TYPE.SCISSORS;
+      document.getElementById("button3").style.display = "none";
     } else {
       $("#myrspimg").attr("src", "img/paper.png");
       hand = HAND_TYPE.PAPER;
+      document.getElementById("button3").style.display = "none";
     }
     return hand;
   }
