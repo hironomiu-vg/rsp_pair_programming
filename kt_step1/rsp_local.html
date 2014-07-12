@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap theme -->
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
-<title>じゃんけんゲーム（ローカル版） | VG Tech Dojo</title>
+    <title>じゃんけんゲーム（ローカル版） | VG Tech Dojo</title>
 
-<style type="text/css">
- body {
-  padding-top: 60px;
-  padding-bottom: 40px;
- }
- .sidebar-nav {
-  padding: 9px 0;
- }
- #result {
-    text-align: center;
- }
- #history {
-    margin: 0 auto;
-    width :500px;
- }
-</style>
+    <style type="text/css">
+      body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+      }
+      .sidebar-nav {
+      padding: 9px 0;
+      }
+      #result {
+      text-align: center;
+      }
+      #history {
+      margin: 0 auto;
+      width :500px;
+      }
+    </style>
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
@@ -54,30 +54,36 @@
         <div class="row">
             
         <div class="col-sm-6" >
-            <button id="start-btn">スタート!</button>
-            <div style="visibility: hidden;">
-                <div class="row text-center">
-                    <button type="button" class="btn rsp-btn" id="rock">グー</button>
-                    <button type="button" class="btn rsp-btn" id="scissors">チョキ</button>
-                    <button type="button" class="btn rsp-btn" id="paper">パー</button>
+            <p class="text-center">
+              <button id="start-btn">スタート!</button>
+              <button id="restart-btn" style="visibility: hidden">もう一回!</button>
+            </p>
+            <div id="intro" style="visibility:hidden;">
+	      <p class="text-center" style="font-size: 40px;">じゃんけん</p>
+              <div class="row text-center">
+                <button type="button" class="btn rsp-btn" id="rock">グー</button>
+                <button type="button" class="btn rsp-btn" id="scissors">チョキ</button>
+                <button type="button" class="btn rsp-btn" id="paper">パー</button>
+              </div>
+	    </div>
+            <hr />
+	    <div id="content" style="visibility: hidden;">
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  <p>あなた</p>
+                  <img id="myrspimg" src="img/rock.png" />
                 </div>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-6 text-center">
-                        <p>あなた</p>
-                        <img id="myrspimg" src="img/rock.png" />
-                    </div>
-                    <div class="col-sm-6 text-center">
-                        <p>ボブ</p>
-                        <img id="bobrspimg" src="img/scissors.png" />
-                    </div>
+                <div class="col-sm-6 text-center">
+                  <p>ボブ</p>
+                  <img id="bobrspimg" src="img/scissors.png" />
                 </div>
-                <hr />
-                <div class="row">
-                    <p id="result"></p>
-                    <p id="summary" class="text-center">Who will win?</p>
-                    <ul id="history"></ul>
-                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <p id="result"></p>
+                <p id="summary" class="text-center">Who will win?</p>
+                <ul id="history"></ul>
+              </div>
             </div>
         </div>
         <div class="col-sm-6">
