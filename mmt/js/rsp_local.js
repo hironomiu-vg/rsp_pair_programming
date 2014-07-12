@@ -2,6 +2,11 @@ var kati=0;
 var make=0;
 var hikiwake=0;
 
+var delrock=0;
+var delscissors=0;
+var delpepar=0;
+
+
 $(function(){
   "use strict";
   var HAND_TYPE = {
@@ -112,6 +117,7 @@ function c(){
 
 function onfifty(){
   console.log("a");
+  document.getElementById("rock").style.display = "none";
 }
 
 function onaudience(){
@@ -122,8 +128,10 @@ function ontel(){
   console.log("c");
 }
 
- function init(){
-     document.getElementById("kankyaku").style.display = "none";
- }
+
+
+ // function init(){
+ //     document.getElementById("kankyaku").style.display = "none";
+ // }
 
 
