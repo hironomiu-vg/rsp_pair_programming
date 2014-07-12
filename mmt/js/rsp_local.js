@@ -46,6 +46,9 @@ $(function(){
   }
   function bobHand() {
     var hand = Math.floor(Math.random() * 3);
+    if(delrock === 1){
+      hand = 2;
+}
     if (hand === HAND_TYPE.ROCK) {
       $("#bobrspimg").attr("src", "img/rock.png");
     } else if (hand === HAND_TYPE.SCISSORS) {
@@ -53,6 +56,7 @@ $(function(){
     } else {
       $("#bobrspimg").attr("src", "img/paper.png");
     }
+  
     return hand;
   }
   function judge(myHand, otherHand) {
@@ -118,6 +122,7 @@ function c(){
 function onfifty(){
   console.log("a");
   document.getElementById("rock").style.display = "none";
+  delrock = 1;
 }
 
 function onaudience(){
@@ -126,6 +131,7 @@ function onaudience(){
 
 function ontel(){
   console.log("c");
+  alert("相手はグー出すよ");
 }
 
 
