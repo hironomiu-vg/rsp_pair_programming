@@ -73,4 +73,12 @@ $(function(){
     }
     $("#seiseki").text("戦績サマリー"+ win +"勝" + lose +"敗" + draw+ "分");
   }
+
+  $("button").click( function(){
+    $("p").toggle();
+  });
+
+ 
+
+
 });
