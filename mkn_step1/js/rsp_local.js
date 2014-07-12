@@ -11,12 +11,18 @@ $(function(){
     LOSE : 2,
   };
 
+  var draw = 0;
+  var win = 0;
+  var lose = 0;
+
   $(".rsp-btn").click(function(){
     var result = judge(
       myHand($(this).attr("id")),
       bobHand()
       );
     showResult(result);
+    var seiseki;
+    showResult(seiseki);
   });
   function myHand(handType) {
     var hand;
@@ -47,10 +53,13 @@ $(function(){
     var result;
     if (myHand === otherHand) {
       result = RSP_RESULT_CODE.DRAW;
+      draw++;
     } else if ((myHand === HAND_TYPE.ROCK && otherHand === HAND_TYPE.SCISSORS) || (myHand === HAND_TYPE.SCISSORS && otherHand === HAND_TYPE.PAPER) || (myHand === HAND_TYPE.PAPER && otherHand === HAND_TYPE.ROCK)) {
       result = RSP_RESULT_CODE.WIN;
+      win++;
     }else {
       result = RSP_RESULT_CODE.LOSE;
+      lose++;
     }
     return result;
   }
@@ -62,5 +71,17 @@ $(function(){
     } else {
       $("#result").text("You lose!");
     }
+    $("#seiseki").text("戦績サマリー"+ win +"勝" + lose +"敗" + draw+ "分");
   }
 });
+
+// function(){
+//     // 「id="jQueryBox"」を非表示
+//     $("#jQueryBox").css("display", "none");
+
+//     // 「id="jQueryPush"」がクリックされた場合
+//     $("#jQueryPush").click(function(){
+//         // 「id="jQueryBox"」の表示、非表示を切り替える
+//         $("#jQueryBox").toggle();
+//     });
+// };
