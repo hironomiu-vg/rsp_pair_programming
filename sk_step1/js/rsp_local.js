@@ -1,3 +1,5 @@
+
+
 $(function(){
   "use strict";
   var HAND_TYPE = {
@@ -10,6 +12,11 @@ $(function(){
     WIN : 1,
     LOSE : 2,
   };
+  
+  var win = 0;
+  var lose = 0;
+  var draw = 0;
+  
 
   $(".rsp-btn").click(function(){
     $(".del").toggle();
@@ -48,10 +55,13 @@ $(function(){
     var result;
     if (myHand === otherHand) {
       result = RSP_RESULT_CODE.DRAW;
+      draw = draw + 1;
     } else if ((myHand === HAND_TYPE.ROCK && otherHand === HAND_TYPE.SCISSORS) || (myHand === HAND_TYPE.SCISSORS && otherHand === HAND_TYPE.PAPER) || (myHand === HAND_TYPE.PAPER && otherHand === HAND_TYPE.ROCK)) {
       result = RSP_RESULT_CODE.WIN;
+      win = win + 1;
     }else {
       result = RSP_RESULT_CODE.LOSE;
+      lose = lose + 1;
     }
     return result;
   }
@@ -63,5 +73,7 @@ $(function(){
     } else {
       $("#result").text("You lose!");
     }
+    
+    $("#t_result").text(win + "勝" + lose + "敗" + draw + "引き分け" );
   }
 });
