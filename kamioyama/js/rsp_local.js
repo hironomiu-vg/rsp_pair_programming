@@ -1,3 +1,7 @@
+var kati=0;
+var make=0;
+var hikiwake=0;
+
 $(function(){
   "use strict";
   var HAND_TYPE = {
@@ -57,10 +61,25 @@ $(function(){
   function showResult(result) {
     if (result === RSP_RESULT_CODE.DRAW) {
       $("#result").text("draw.");
+      var info=document.getElementById("senreki");
+      var textNode=document.createTextNode("引き分け\n");
+      info.appendChild(textNode);
+      hikiwake= hikiwake+1;
+      document.getElementById("samary3").textContent=hikiwake;
     } else if (result === RSP_RESULT_CODE.WIN) {
       $("#result").text("You win!");
+      var info=document.getElementById("senreki");
+      var textNode=document.createTextNode("勝利\n");
+      info.appendChild(textNode);
+      kati=kati+1;
+      document.getElementById("samary1").textContent=kati;
     } else {
       $("#result").text("You lose!");
+      var info=document.getElementById("senreki");
+      var textNode=document.createTextNode("負け\n");
+      info.appendChild(textNode);
+      make=make+1;
+      document.getElementById("samary2").textContent=make;
     }
   }
 });
