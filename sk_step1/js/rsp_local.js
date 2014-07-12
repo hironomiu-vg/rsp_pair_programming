@@ -12,7 +12,7 @@ $(function(){
   };
 
   $(".rsp-btn").click(function(){
-    $("#del").toggle();
+    $(".del").toggle();
     var result = judge(
       myHand($(this).attr("id")),
       bobHand()
