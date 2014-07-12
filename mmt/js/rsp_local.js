@@ -122,8 +122,8 @@ function ontel(){
   console.log("c");
 }
 
-// function init(){
-//     document.getElementById("button3").style.display = "none";
-// }
+ function init(){
+     document.getElementById("kankyaku").style.display = "none";
+ }
 
 
