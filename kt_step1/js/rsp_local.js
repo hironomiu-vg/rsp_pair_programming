@@ -27,6 +27,11 @@ $(function(){
     draw: 0
   };
 
+  $("#start-btn").click(function() {
+    $("#intro").css("visibility", "visible");
+    $(this).css("display", "none");
+  });
+    
   $("#show-btn").click(function() {
     $(".nav-list").toggle();
   });
@@ -36,7 +41,8 @@ $(function(){
     var my = myHand($(this).attr("id"));
     
     var result = judge(my, bob);
-
+    $("#content").css("visibility", "visible");
+    $("#intro").css("visibility", "hidden");
     addHistory(my, bob, result);
     showResult(result);
   });
