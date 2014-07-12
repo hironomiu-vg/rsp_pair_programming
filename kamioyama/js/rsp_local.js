@@ -91,3 +91,13 @@ function b(){
 function a(){
   document.getElementById("text1").style.display = "block";
 }
+
+
+function c(){
+  document.getElementById("kekka").textContent = "じゃんけん";
+  document.getElementById("button3").style.display = "block";
+}
+
+function init(){
+    document.getElementById("button3").style.display = "none";
+}
