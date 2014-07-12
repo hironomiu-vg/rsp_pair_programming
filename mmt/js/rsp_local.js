@@ -125,13 +125,17 @@ function onfifty(){
   delrock = 1;
 }
 
+// var d = Math.random() * 50;
+// var e = 100 - d;
+// var f = 100 - (d + e);
 function onaudience(){
   console.log("b");
+  alert("aoudienceの反応：ぐー" + 50 + "%, ちょき" + 38 + "%, ぱー" + 12 + "%");
 }
 
 function ontel(){
   console.log("c");
-  alert("相手はグー出すよ");
+  alert("相手はグー出すと思うよ！");
 }
 
 
