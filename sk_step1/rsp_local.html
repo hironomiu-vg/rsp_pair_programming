@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+<title>じゃんけんゲー�&#63728;�E�ローカル版！E| VG Tech Dojo</title>
+
+<style type="text/css">
+ body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+ }
+ .sidebar-nav {
+  padding: 9px 0;
+ }
+</style>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">VG-Tech-Dojo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="content-header">
+                <h1>じゃんけんゲー�&#63728;</h1>
+            </div>
+        </div>
+            <hr />
+        <div class="row">
+        <div class="col-sm-6">
+            <div class="row text-center">
+                <button type="button" class="btn rsp-btn" id="rock">グー</button>
+                <button type="button" class="btn rsp-btn" id="scissors">チョキ</button>
+                <button type="button" class="btn rsp-btn" id="paper">パ�E</button>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <p>あなぁE/p>
+                    <img id="myrspimg" src="img/rock.png" />
+                </div>
+                <div class="col-sm-6 text-center">
+                    <p>ボブ</p>
+                    <img id="bobrspimg" src="img/scissors.png" />
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <p id="result" class="text-center">Who will win?</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list del">
+               
+                    <li class="nav-header">じゃんけんゲー�&#63728;</li>
+                    <ul> 
+                        <li><h4>ボブとじゃんけん勝�&#63728;ができます。あなた�Eグー、チョキ、パーのぁE��れかのボタンを押すことで出す手を選択できあなたが選択した手と同じ画像が表示され同時にボブがランダ�&#63728;に選択した手と同じ画像が表示されます。あなたとボブの勝敗結果が画像�E下に表示されます、E/h4></li> <br>
+                        <li>ペアプロ1st�E�各stepめE5刁E��代で実施�E�E
+                            <ul>
+                                <li>step1: 説明文の表示/非表示を実裁E��ましょぁE/li>
+                                <li>step2: 勝敗結果の下に戦績�E�サマリー、履歴�E�を表示してください。戦績はブラウザを閉じるとリセチE��されます。戦績サマリーはxx勝xx敗xx刁E��と表示してください。戦績履歴は1回ごとの自刁E�E手、相手�E手、勝敗を表示してください、E/li>
+                                <li>step3: スタート�Eタンを追�&#63728;しましょぁE��押すと「じめE��けん」と表示されます。そしてボタンが押されるまでグーチョキパ�Eは押せません、E/li>
+                                <li>step4: 勝敗結果を派手にしましょぁE��画像を入れたり、エフェクトを掛けてみたりペア毎に案を出して実裁E��ましょぁE/li>
+                            </ul>
+                        </li><br>
+                        <li>グループ開発�E�Etep関係なぁE0刁E��代で実施�E�E
+                            <ul>
+                                <li>ジャンケンゲー�&#63728;を更に楽しくするアイチE��アを�EしましょぁE��そしてどのアイチE��アを実裁E��るかグループで決定しましょぁE/li>
+                                    <ul>
+                                        <li>例　対戦相手を褁E��にし、対戦相手ごとに特徴を�EぁE/li>
+                                        <li>例　表示冁E��を派手にする</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; VOYAGE GROUP, Inc. All Rights Reserved.</p>
+        </footer>
+    </div><!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/rsp_local.js"></script>
+</body>
+</html>
