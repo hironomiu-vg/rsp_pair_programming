@@ -26,13 +26,18 @@ $(function(){
   $(".start").click(function(){
   $("#jankentext").text("");
   $(".rsp-btn").hide();
-  setTimeout("showjanken()",200)
-  
-  });
+  setInterval(function() {
   
   function showjanken(){
   $("#jankentext").text("じゃんけん");
   $(".rsp-btn").show();
+  clearInterval()
+  })
+  
+  
+  });
+  
+  
   
   
   }
