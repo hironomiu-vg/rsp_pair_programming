@@ -20,6 +20,25 @@ $(function(){
   $(".toggle").click(function(){
   $(".del").toggle();
   });
+  
+ 
+  
+  $(".start").click(function(){
+  $("#jankentext").text("");
+  $(".rsp-btn").hide();
+  setTimeout("showjanken()",200)
+  
+  });
+  
+  function showjanken(){
+  $("#jankentext").text("じゃんけん");
+  $(".rsp-btn").show();
+  
+  
+  }
+  
+  
+  
 
   $(".rsp-btn").click(function(){
     var result = judge(
