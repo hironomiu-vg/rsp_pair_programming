@@ -21,26 +21,21 @@ $(function(){
   $(".del").toggle();
   });
   
- 
   
   $(".start").click(function(){
   $("#jankentext").text("");
   $(".rsp-btn").hide();
-  setInterval(function() {
-  
-  function showjanken(){
+                    var hoge = setInterval(function(){
   $("#jankentext").text("じゃんけん");
   $(".rsp-btn").show();
-  clearInterval()
-  })
-  
-  
+  clearInterval(hoge);
+              },3000)
   });
   
   
   
   
-  }
+  
   
   
   
@@ -51,6 +46,7 @@ $(function(){
       bobHand()
       );
     showResult(result);
+                      $(".rsp-btn").hide();
   });
   
   function myHand(handType) {
@@ -67,6 +63,7 @@ $(function(){
     }
     return hand;
   }
+  
   function bobHand() {
     var hand = Math.floor(Math.random() * 3);
     if (hand === HAND_TYPE.ROCK) {
@@ -78,6 +75,7 @@ $(function(){
     }
     return hand;
   }
+  
   function judge(myHand, otherHand) {
     var result;
     if (myHand === otherHand) {
