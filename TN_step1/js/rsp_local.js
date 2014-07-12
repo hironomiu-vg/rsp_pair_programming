@@ -25,6 +25,7 @@ $(function(){
       myHand($(this).attr("id")),
       bobHand()
       );
+    showStart(start);
     showResult(result);
     showRecord(record);
   });
@@ -87,6 +88,10 @@ $(function(){
 
   function showHistory(history){
     $("#history").append("自分：" + myhand2 + "相手："+ bobhand2 +"勝敗：" + history2);
+  }
+
+  function showStart(start){
+    $("#start").text("じゃんけん");
   }
 
   $("#button").click(function () {
