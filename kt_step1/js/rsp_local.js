@@ -36,6 +36,14 @@ $(function(){
     $(".nav-list").toggle();
   });
 
+  $("#restart-btn").click(function() {
+    $("#intro").css("visibility", "visible");
+    $("#content").css("visibility", "hidden");
+    $(this).css("visibility", "hidden");
+  });
+
+
+
   $(".rsp-btn").click(function(){
     var bob = bobHand();
     var my = myHand($(this).attr("id"));
@@ -43,6 +51,7 @@ $(function(){
     var result = judge(my, bob);
     $("#content").css("visibility", "visible");
     $("#intro").css("visibility", "hidden");
+    $("#restart-btn").css("visibility", "visible");
     addHistory(my, bob, result);
     showResult(result);
   });
@@ -100,10 +109,16 @@ $(function(){
     
     if (result === RSP_RESULT_CODE.DRAW) {
       $("#result").text("draw.");
+      $("#result").css("color", "purple");
+
     } else if (result === RSP_RESULT_CODE.WIN) {
       $("#result").text("You win!");
+      $("#result").css("color", "red");
+
     } else {
       $("#result").text("You lose!");
+      $("#result").css("color", "blue");
+
     }
     
   }
