@@ -17,15 +17,18 @@ $(function(){
   var lose = 0;
   var draw = 0;
   
+  $(".toggle").click(function(){
+  $(".del").toggle();
+  });
 
   $(".rsp-btn").click(function(){
-    $(".del").toggle();
     var result = judge(
       myHand($(this).attr("id")),
       bobHand()
       );
     showResult(result);
   });
+  
   function myHand(handType) {
     var hand;
     if (handType == "rock") {
