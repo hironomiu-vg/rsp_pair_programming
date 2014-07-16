@@ -1,5 +1,5 @@
 (function(w, _, Vue){
-  'user strict';
+  'use strict';
 
   new Vue({
     el: '#rsp',
