@@ -105,6 +105,14 @@
         <div class="row-fluid">
             <div class="content-header">
                 <h1>じゃんけんゲーム</h1>
+								<p>相手の癖:
+								<select v-model="strategy">
+								<option value="standard">標準</option>
+								<option value="rockOnly">頑固にグー</option>
+								<option value="oumu">オウム返し</option>
+								<option value="observation">履歴重視</option>
+								</select>
+								</p>
             </div>
         </div>
             <hr />
@@ -190,9 +198,11 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="bower_components/vue/dist/vue.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+		<script src="js/janken.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
