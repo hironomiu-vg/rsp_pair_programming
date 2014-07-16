@@ -1,99 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap theme -->
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap theme -->
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
-<title>じゃんけんゲーム（ローカル版） | VG Tech Dojo</title>
+		<title>じゃんけんゲーム（ローカル版） | VG Tech Dojo</title>
 
-<style type="text/css">
- body {
-  padding-top: 60px;
-  padding-bottom: 40px;
- }
- .sidebar-nav {
-  padding: 9px 0;
- }
+		<style type="text/css">
+		body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+		}
+		.sidebar-nav {
+				padding: 9px 0;
+		}
 
 
- .animated {
-		 display: inline-block;
- }
- .animated.v-enter {
-		 -webkit-animation: fadein .5s;
-		 animation: fadein .5s;
- }
- .animated.v-leave {
-		 -webkit-animation: fadeout .5s;
-		 animation: fadeout .5s;
- }
- @keyframes fadein {
-		 95% {
-				 transform: scale(0);
-				 -webkit-transform: scale(0);
-		 }
-		 97% {
-				 transform: scale(1.5);
-				 -webkit-transform: scale(1.5);
-		 }
-		 100% {
-				 transform: scale(1);
-				 -webkit-transform: scale(1);
-		 }
- }
- @keyframes fadeout {
-		 0% {
-				 transform: scale(1);
-				 -webkit-transform: scale(1);
-		 }
-		 50% {
-				 transform: scale(1.5);
-				 -webkit-transform: scale(1.5);
-		 }
-		 100% {
-				 transform: scale(0);
-				 -webkit-transform: scale(0);
-		 }
- }
- @-webkit-keyframes fadein {
-		 95% {
-				 -webkit-transform: scale(0);
-		 }
-		 97% {
-				 -webkit-transform: scale(1.5);
-		 }
-		 100% {
-				 -webkit-transform: scale(1);
-		 }
- }
- @-webkit-keyframes fadeout {
-		 0% {
-				 -webkit-transform: scale(1);
-		 }
-		 50% {
-				 -webkit-transform: scale(1.5);
-		 }
-		 100% {
-				 -webkit-transform: scale(0);
-		 }
- }
+		.animated {
+				display: inline-block;
+		}
+		.animated.v-enter {
+				-webkit-animation: fadein .5s;
+				animation: fadein .5s;
+		}
+		.animated.v-leave {
+				-webkit-animation: fadeout .5s;
+				animation: fadeout .5s;
+		}
+		@keyframes fadein {
+				95% {
+						transform: scale(0);
+						-webkit-transform: scale(0);
+				}
+				97% {
+						transform: scale(1.5);
+						-webkit-transform: scale(1.5);
+				}
+				100% {
+						transform: scale(1);
+						-webkit-transform: scale(1);
+				}
+		}
+		@keyframes fadeout {
+				0% {
+						transform: scale(1);
+						-webkit-transform: scale(1);
+				}
+				50% {
+						transform: scale(1.5);
+						-webkit-transform: scale(1.5);
+				}
+				100% {
+						transform: scale(0);
+						-webkit-transform: scale(0);
+				}
+		}
+		@-webkit-keyframes fadein {
+				95% {
+						-webkit-transform: scale(0);
+				}
+				97% {
+						-webkit-transform: scale(1.5);
+				}
+				100% {
+						-webkit-transform: scale(1);
+				}
+		}
+		@-webkit-keyframes fadeout {
+				0% {
+						-webkit-transform: scale(1);
+				}
+				50% {
+						-webkit-transform: scale(1.5);
+				}
+				100% {
+						-webkit-transform: scale(0);
+				}
+		}
 
-</style>
+		</style>
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>
-<body>
-     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+				<![endif]-->
+	</head>
+	<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">VG-Tech-Dojo</a>
@@ -102,26 +102,26 @@
     </div>
 
     <div class="container-fluid" id="rsp">
-        <div class="row-fluid">
-            <div class="content-header">
-                <h1>じゃんけんゲーム</h1>
-								<p>相手の癖:
-								<select v-model="strategy">
-								<option value="standard">標準</option>
-								<option value="rockOnly">頑固にグー</option>
-								<option value="oumu">オウム返し</option>
-								<option value="observation">履歴重視</option>
-								</select>
-								</p>
-            </div>
+      <div class="row-fluid">
+        <div class="content-header">
+          <h1>じゃんけんゲーム</h1>
+					<p>相手の癖:
+						<select v-model="strategy">
+							<option value="standard">標準</option>
+							<option value="rockOnly">頑固にグー</option>
+							<option value="oumu">オウム返し</option>
+							<option value="observation">履歴重視</option>
+						</select>
+					</p>
         </div>
-            <hr />
-        <div class="row" v-show="screen == 'opening'">
+      </div>
+      <hr />
+      <div class="row" v-show="screen == 'opening'">
         <div class="col-sm-6">
 					<button type="button" class="btn rsp-btn" v-on="click: (screen = 'game')">START</button>
 				</div>
-				</div>
-        <div class="row" v-show="screen == 'game'">
+			</div>
+      <div class="row" v-show="screen == 'game'">
         <div class="col-sm-6">
 					<div class="row text-center animated" v-if="!isShowHands" v-animation>
 						<button type="button" class="btn rsp-btn" v-on="click: (isShowHands = true)">じゃんけん！</button>
@@ -131,78 +131,78 @@
             <button type="button" class="btn rsp-btn" id="scissors" v-on="click: execute('scissors')">チョキ</button>
             <button type="button" class="btn rsp-btn" id="paper" v-on="click: execute('paper')">パー</button>
           </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-6 text-center">
-                    <p>あなた</p>
-                    <img id="myrspimg" v-attr="src: 'img/' + myHand + '.png'" />
-                </div>
-                <div class="col-sm-6 text-center">
-                    <p>ボブ</p>
-                    <img id="bobrspimg" v-attr="src: 'img/' + bobHand + '.png'" />
-                </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6 text-center">
+              <p>あなた</p>
+              <img id="myrspimg" v-attr="src: 'img/' + myHand + '.png'" />
             </div>
-            <hr />
-            <div class="row">
-                <p id="result" class="text-center">{{result}}</p>
-                <div id="seiseki">
-									<p>戦績結果 <span>{{total.win}}勝 {{total.lose}}負 {{total.draw}}分け</span></p>
-									
-									<ul v-repeat="histories">
-										<li v-style="color: resultColor(result)">
-											<h4><small>{{histories.length - $index}}戦目</small>{{result}}</h4>
-											<p>あなた:{{my}}, ボブ,{{bob}}</p>
-										</li>
-									</ul>
-								</div>
-								
+            <div class="col-sm-6 text-center">
+              <p>ボブ</p>
+              <img id="bobrspimg" v-attr="src: 'img/' + bobHand + '.png'" />
             </div>
+          </div>
+          <hr />
+          <div class="row">
+            <p id="result" class="text-center">{{result}}</p>
+            <div id="seiseki">
+							<p>戦績結果 <span>{{total.win}}勝 {{total.lose}}負 {{total.draw}}分け</span></p>
+							
+							<ul v-repeat="histories">
+								<li v-style="color: resultColor(result)">
+									<h4><small>{{histories.length - $index}}戦目</small>{{result}}</h4>
+									<p>あなた:{{my}}, ボブ,{{bob}}</p>
+								</li>
+							</ul>
+						</div>
+						
+          </div>
         </div>
         <div class="col-sm-6">
-            <div class="well sidebar-nav">
-                <ul class="nav nav-list">
-                    <li class="nav-header">じゃんけんゲーム 
-											<button type="button" class="btn rsp-btn" v-on="click: (isShowDescription = !isShowDescription)">HELP</button>
-										</li>
-                    <ul v-show="isShowDescription">
-                        <li><h4>ボブとじゃんけん勝負ができます。あなたはグー、チョキ、パーのいずれかのボタンを押すことで出す手を選択できあなたが選択した手と同じ画像が表示され同時にボブがランダムに選択した手と同じ画像が表示されます。あなたとボブの勝敗結果が画像の下に表示されます。</h4></li> <br>
-                        <li>ペアプロ1st（各stepを15分交代で実施）
-                            <ul>
-                                <li>step1: 説明文の表示/非表示を実装しましょう</li>
-                                <li>step2: 勝敗結果の下に戦績（サマリー、履歴）を表示してください。戦績はブラウザを閉じるとリセットされます。戦績サマリーはxx勝xx敗xx分けと表示してください。戦績履歴は1回ごとの自分の手、相手の手、勝敗を表示してください。</li>
-                                <li>step3: スタートボタンを追加しましょう。押すと「じゃんけん」と表示されます。そしてボタンが押されるまでグーチョキパーは押せません。</li>
-                                <li>step4: 勝敗結果を派手にしましょう。画像を入れたり、エフェクトを掛けてみたりペア毎に案を出して実装しましょう</li>
-                            </ul>
-                        </li><br>
-                        <li>グループ開発（step関係なく10分交代で実施）
-                            <ul>
-                                <li>ジャンケンゲームを更に楽しくするアイディアを出しましょう。そしてどのアイディアを実装するかグループで決定しましょう</li>
-                                    <ul>
-                                        <li>例　対戦相手を複数にし、対戦相手ごとに特徴を出す</li>
-                                        <li>例　表示内容を派手にする</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">じゃんけんゲーム 
+								<button type="button" class="btn rsp-btn" v-on="click: (isShowDescription = !isShowDescription)">HELP</button>
+							</li>
+              <ul v-show="isShowDescription">
+                <li><h4>ボブとじゃんけん勝負ができます。あなたはグー、チョキ、パーのいずれかのボタンを押すことで出す手を選択できあなたが選択した手と同じ画像が表示され同時にボブがランダムに選択した手と同じ画像が表示されます。あなたとボブの勝敗結果が画像の下に表示されます。</h4></li> <br>
+                <li>ペアプロ1st（各stepを15分交代で実施）
+                  <ul>
+                    <li>step1: 説明文の表示/非表示を実装しましょう</li>
+                    <li>step2: 勝敗結果の下に戦績（サマリー、履歴）を表示してください。戦績はブラウザを閉じるとリセットされます。戦績サマリーはxx勝xx敗xx分けと表示してください。戦績履歴は1回ごとの自分の手、相手の手、勝敗を表示してください。</li>
+                    <li>step3: スタートボタンを追加しましょう。押すと「じゃんけん」と表示されます。そしてボタンが押されるまでグーチョキパーは押せません。</li>
+                    <li>step4: 勝敗結果を派手にしましょう。画像を入れたり、エフェクトを掛けてみたりペア毎に案を出して実装しましょう</li>
+                  </ul>
+                </li><br>
+                <li>グループ開発（step関係なく10分交代で実施）
+                  <ul>
+                    <li>ジャンケンゲームを更に楽しくするアイディアを出しましょう。そしてどのアイディアを実装するかグループで決定しましょう</li>
+                    <ul>
+                      <li>例　対戦相手を複数にし、対戦相手ごとに特徴を出す</li>
+                      <li>例　表示内容を派手にする</li>
                     </ul>
+                </li>
                 </ul>
-            </div>
-        </div>
-        </div>
-        <hr />
-        <footer>
-            <p>&copy; VOYAGE GROUP, Inc. All Rights Reserved.</p>
-        </footer>
-    </div><!-- /container -->
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<footer>
+	<p>&copy; VOYAGE GROUP, Inc. All Rights Reserved.</p>
+</footer>
+</div><!-- /container -->
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-		<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="bower_components/vue/dist/vue.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-		<script src="js/janken.js"></script>
-    <script src="js/main.js"></script>
+<!-- Le javascript
+		 ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="js/janken.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
