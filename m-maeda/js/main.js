@@ -4,7 +4,6 @@
   new Vue({
     el: '#rsp',
     data: {
-      show: true,
       screen: 'opening',
       isShowHands: false,
       isShowDescription: false,
