@@ -1,16 +1,16 @@
-(function(w, _, v){
-  'user strict';
+(function(w, _, Vue){
+  'use strict';
 
   new Vue({
     el: '#rsp',
     data: {
-      show: true,
       screen: 'opening',
       isShowHands: false,
       isShowDescription: false,
       
       myHand: 'rock',
       bobHand: 'rock',
+      strategy: 'standard',
       result: '引き分け',
       total: { win: 0, lose: 0, draw: 0},
       histories: []
@@ -19,13 +19,13 @@
       // じゃんけん
       execute: function (type) {
         this.$data.myHand = type;
-        this.changeBobHand();
+        this.changeBobHand(w.JankenStrategy[this.$data.strategy]);
         this.judge();
         this.addHistory(this.$data.myHand, this.$data.bobHand, this.$data.result);
       },
       // ボブの選択変更
-      changeBobHand: function() {
-        this.$data.bobHand = _.sample(['rock', 'scissors', 'paper']);
+      changeBobHand: function(strategy) {
+        this.$data.bobHand = strategy(_.clone(this.$data.histories));
       },
       // 勝利判定
       judge: function() {
@@ -67,4 +67,4 @@
       }
     }
   });
-})(window, _,  Vue);
+})(window, _, Vue);
